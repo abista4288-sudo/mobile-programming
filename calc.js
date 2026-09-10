@@ -1,4 +1,3 @@
-
 function calculate(value) {
 
     let display = document.getElementById("display");
