@@ -20,36 +20,38 @@ function atm(action) {
 
     }
 
-    else if (loggedIn == false) {
-        screen.innerHTML = "Please enter the correct PIN first";
-    }
-
     else if (action == "withdraw") {
 
-        if (amount <= 0) {
-            screen.innerHTML = "Enter a valid amount";
-        }
-        else if (amount > balance) {
-            screen.innerHTML = "Insufficient balance";
-        }
-        else {
-            balance = balance - amount;
-            screen.innerHTML = "Withdraw successful. Remaining balance: Rs. " + balance;
-        }
-
+    if (amount <= 0) {
+        screen.innerHTML = "Enter a valid amount";
+    }
+    else if (amount % 100 != 0) {
+        screen.innerHTML = "Amount must be a multiple of 100";
+    }
+    else if (amount > balance) {
+        screen.innerHTML = "Insufficient balance";
+    }
+    else {
+        balance = balance - amount;
+        screen.innerHTML = "Withdraw successful. Remaining balance: Rs. " + balance;
     }
 
-    else if (action == "deposit") {
+}
 
-        if (amount <= 0) {
-            screen.innerHTML = "Enter a valid amount";
-        }
-        else {
-            balance = balance + amount;
-            screen.innerHTML = "Deposit successful. Remaining balance: Rs. " + balance;
-        }
+else if (action == "deposit") {
 
+    if (amount <= 0) {
+        screen.innerHTML = "Enter a valid amount";
     }
+    else if (amount % 100 != 0) {
+        screen.innerHTML = "Amount must be a multiple of 100";
+    }
+    else {
+        balance = balance + amount;
+        screen.innerHTML = "Deposit successful. Remaining balance: Rs. " + balance;
+    }
+
+}
 
     else if (action == "balance") {
         screen.innerHTML = "Your remaining balance is: Rs. " + balance;
