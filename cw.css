@@ -1,0 +1,47 @@
+body {
+    font-family: Arial;
+    background-color: #f2f2f2;
+    padding: 30px;
+}
+
+#profile-card {
+    width: 500px;
+    margin: 0 auto;
+    padding: 25px;
+    background-color: white;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+#profile-photo {
+    border-radius: 10px;
+}
+
+button {
+    margin: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.highlighted {
+    border: 4px solid #f1c40f;
+}
+
+.dark-mode {
+    background-color: #222 !important;
+    color: white;
+}
+
+.rounded {
+    border-radius: 50%;
+}
+
+.shadow {
+    box-shadow: 0 0 20px gray;
+}
+
+#output {
+    font-size: 18px;
+    font-weight: bold;
+}
+```
