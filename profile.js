@@ -2,14 +2,23 @@ $(document).ready(function() {
 
     $("#qrButton").click(function() {
 
-        let profileInfo = "Name: Aryan Bista\nBScIT Student\nLocation: Nepal";
+        if ($("#qrcode").is(":empty")) {
 
-        $("#qrcode").html("");
+            let profileInfo = "Name: Aryan Bista\nBScIT Student\nLocation: Nepal";
 
-        new QRCode(
-            document.getElementById("qrcode"),
-            profileInfo
-        );
+            new QRCode(
+                document.getElementById("qrcode"),
+                profileInfo
+            );
+
+            $("#qrButton").text("Hide QR Code");
+
+        } else {
+
+            $("#qrcode").html("");
+
+            $("#qrButton").text("Show QR Code");
+        }
 
     });
 
